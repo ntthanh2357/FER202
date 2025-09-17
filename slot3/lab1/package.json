@@ -16,7 +16,15 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "ex1": "node src/ex1.js",
+    "ex2": "node src/ex2.js",
+    "ex3": "node src/ex3.js",
+    "ex4": "node src/ex4.js",
+    "ex5": "node src/ex5.js",
+    "ex6": "node src/ex6.js",
+    "ex7": "node src/ex7.js",
+    "ex8": "node src/ex8.js"
   },
   "eslintConfig": {
     "extends": [
@@ -36,4 +44,5 @@
       "last 1 safari version"
     ]
   }
+
 }

@@ -1,17 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// index.js
+const ex = process.argv[2]; // tham số dòng lệnh
+if (!ex) {
+  console.log("Vui lòng chọn bài (vd: node index ex3)");
+  process.exit(1);
+}
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+import(`./src/${ex}.js`)
+  .then(() => console.log(`${ex} chạy xong ✅`))
+  .catch(() => console.log(`Không tìm thấy file ${ex}.js`));
