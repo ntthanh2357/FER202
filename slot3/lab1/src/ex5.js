@@ -1,12 +1,14 @@
 const people = [
   { name: "Ann", age: 19 },
-  { name: "Bob", age: 12 },
-  { name: "Cathy", age: 15 },
-  { name: "David", age: 22 }
+  { name: "Bob", age: 22 },
+  { name: "Tom", age: 15 },
+  { name: "Sue", age: 12 }
 ];
 
-const teens = people
-  .filter(p => p.age >= 13 && p.age <= 19)     // lọc tuổi teen
-  .map(p => `${p.name} (${p.age})`);           // map sang chuỗi "Name (Age)"
-
-teens.forEach(t => console.log(t));
+// Dùng vòng lặp for 
+for (let i = 0; i < people.length; i++) {
+  let p = people[i];
+  if (p.age >= 13 && p.age <= 19) { // điều kiện tuổi teen
+    console.log(p.name + " (" + p.age + ")");
+  }
+}

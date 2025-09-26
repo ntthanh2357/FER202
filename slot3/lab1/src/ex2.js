@@ -1,20 +1,31 @@
-// Hàm tính tổng
+// Hàm sum: cộng tất cả tham số hợp lệ
 const sum = (...nums) => {
-  return nums
-    .filter(n => typeof n === "number" && !isNaN(n)) // chỉ lấy số hợp lệ
-    .reduce((acc, cur) => acc + cur, 0);             // cộng dồn
+  let total = 0; // khởi tạo biến tổng
+  for (let i = 0; i < nums.length; i++) { // duyệt mảng nums
+    let n = nums[i];
+    if (typeof n === "number" && !isNaN(n)) { // nếu là số hợp lệ
+      total += n; // cộng vào tổng
+    }
+  }
+  return total;
 };
 
-// Hàm tính trung bình
+// Hàm avg: tính trung bình cộng
 const avg = (...nums) => {
-  const validNums = nums.filter(n => typeof n === "number" && !isNaN(n));
-  if (validNums.length === 0) return 0;
-  const total = validNums.reduce((acc, cur) => acc + cur, 0);
-  return (total / validNums.length).toFixed(2); // làm tròn 2 chữ số
+  let total = 0;
+  let count = 0;
+  for (let i = 0; i < nums.length; i++) {
+    let n = nums[i];
+    if (typeof n === "number" && !isNaN(n)) {
+      total += n;
+      count++;
+    }
+  }
+  if (count === 0) return 0; // nếu không có số hợp lệ
+  return (total / count).toFixed(2); // làm tròn 2 số thập phân
 };
 
-// Test
-console.log(sum(1, 2, 3));       // 6
-console.log(sum(1, 'x', 4));     // 5
-console.log(avg(1, 2, 3, 4));    // 2.50
-console.log(avg());              // 0
+console.log("sum(1,2,3):", sum(1, 2, 3));
+console.log("sum(1,'x',4):", sum(1, 'x', 4));
+console.log("avg(1,2,3,4):", avg(1, 2, 3, 4));
+console.log("avg():", avg());

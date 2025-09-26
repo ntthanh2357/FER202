@@ -1,18 +1,13 @@
 const person = {
-  name: "Alice",
+  name: "An",
   address: {
-    street: "123 Main St"
-    // city không có
+    street: "123 ABC"
+    // không có city
   }
 };
 
-// Lấy street, city (nếu không có thì mặc định "Unknown City")
-const {
-  address: {
-    street,
-    city = "Unknown City"
-  }
-} = person;
+// Destructuring object + giá trị mặc định
+const { address: { street, city = "Unknown City" } = {} } = person;
 
-console.log(street); // "123 Main St"
-console.log(city);   // "Unknown City"
+console.log("street:", street);
+console.log("city:", city);

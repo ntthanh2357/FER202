@@ -1,28 +1,29 @@
-const ages = [33, 12, 20, 16, 19, 25, 13];
+const ages2 = [33, 12, 20, 16, 19, 25, 40];
 
-const stats = ages.reduce((acc, age) => {
-  // Cộng dồn total
-  acc.total += age;
+// Biến thống kê
+let total = 0;
+let min = Infinity;
+let max = -Infinity;
+let teen = 0;
+let adult = 0;
+
+for (let i = 0; i < ages2.length; i++) {
+  let age = ages2[i];
+
+  // Cộng vào tổng
+  total += age;
 
   // Tìm min, max
-  if (age < acc.min) acc.min = age;
-  if (age > acc.max) acc.max = age;
+  if (age < min) min = age;
+  if (age > max) max = age;
 
-  // Đếm bucket
+  // Đếm nhóm
   if (age >= 13 && age <= 19) {
-    acc.buckets.teen++;
+    teen++;
   } else if (age >= 20) {
-    acc.buckets.adult++;
+    adult++;
   }
+}
 
-  return acc;
-}, {
-  total: 0,
-  min: Infinity,
-  max: -Infinity,
-  buckets: { teen: 0, adult: 0 }
-});
-
-// In kết quả
-console.log(`Total: ${stats.total}, Min: ${stats.min}, Max: ${stats.max}`);
-console.log("Buckets:", stats.buckets);
+console.log(`Total: ${total}, Min: ${min}, Max: ${max}`);
+console.log("Buckets:", { teen: teen, adult: adult });
