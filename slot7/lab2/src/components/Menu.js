@@ -20,7 +20,8 @@ const Menu = () => {
                 {item.tag && (
                   <Badge bg="warning" className="position-absolute top-0 start-0 m-2">{item.tag}</Badge>
                 )}
-                <Card.Img variant="top" src={item.img} />
+                <Card.Img variant="top" src={item.img} 
+                style={{ height: "150px", objectFit: "cover" }}/>
               </div>
               <Card.Body>
                 <Card.Title>{item.name}</Card.Title>

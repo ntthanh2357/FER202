@@ -9,6 +9,7 @@ const HeroCarousel = () => {
           className="d-block w-100"
           src="/1.jpg"
           alt="Pizza 1"
+          style={{ maxHeight: "400px", width: "auto" }}
         />
         <Carousel.Caption>
           <h3>Neapolitan Pizza</h3>
@@ -21,6 +22,7 @@ const HeroCarousel = () => {
           className="d-block w-100"
           src="/2.jpg"
           alt="Pizza 2"
+          style={{ maxHeight: "400px", width: "auto" }}
         />
         <Carousel.Caption>
           <h3>Fresh Ingredients</h3>
@@ -33,6 +35,7 @@ const HeroCarousel = () => {
           className="d-block w-100"
           src="/3.jpg"
           alt="Pizza 3"
+          style={{ maxHeight: "400px", width: "auto" }}
         />
         <Carousel.Caption>
           <h3>Delicious Taste</h3>
